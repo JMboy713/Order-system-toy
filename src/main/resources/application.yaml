@@ -1,11 +1,11 @@
-spring:
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: 'jdbc:mysqlL//localhost:3306/coffee'
-    username: root
-    password: wlals980713
-  sql:
-    init:
-      mode: always
-      schema-locations: classpath:sql/schema.sql
-      data-locations: classpath:sql/data.sql
+#spring:
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: 'jdbc:mysqlL//localhost:3306/coffee'
+#    username: root
+#    password: wlals980713
+#  sql:
+#    init:
+#      mode: always
+#      schema-locations: classpath:sql/schema.sql
+#      data-locations: classpath:sql/data.sql
