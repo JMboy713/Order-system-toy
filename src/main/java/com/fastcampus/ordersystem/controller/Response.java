@@ -22,6 +22,6 @@ public class Response<T> {
         return new Response<>(HttpStatus.OK, "success", data);// 200 코드 제공
     }
     public static <T> Response<T> fail(String errorMessage) {
-        return new Response<>(HttpStatus.INTERNAL_SERVER_ERROR, errorMessage , null);// 200 코드 제공
+        return new Response<>(HttpStatus.INTERNAL_SERVER_ERROR, errorMessage , null);
     }
 }
