@@ -30,7 +30,7 @@ public class OrderService {
             StoreProduct storeProduct = storeService.getStoreProduct(createOrder.getStoreId(), productID);
 
             int stockQuantity = storeProduct.getStockQuantity();
-            if (buyQuantity < stockQuantity) {
+            if (buyQuantity > stockQuantity) {
                 throw new RuntimeException("재고가 부족합니다.");
             }
             storeProduct.adjustStockQuantity(buyQuantity);
