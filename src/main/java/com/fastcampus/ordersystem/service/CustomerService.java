@@ -7,6 +7,8 @@ import com.fastcampus.ordersystem.repository.CustomerRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Optional;
+
 @Service
 public class CustomerService {
     private final CustomerRepository customerRepository;
@@ -24,6 +26,12 @@ public class CustomerService {
                 .address(saved.getAddress())
                 .phoneNumber(saved.getPhoneNumber())
                 .build();
+    }
+
+
+    public boolean findCustomerById(Integer customerId) {
+        Optional<Customer> customerOptional = customerRepository.findById(customerId);
+        return customerOptional.isPresent();
     }
 
 }

@@ -15,13 +15,25 @@ import java.util.Map;
 public class OrderService {
     private final OrderRepository orderRepository;
     private final StoreService storeService;
+    private final CustomerService customerService;
 
-    public OrderService(OrderRepository orderRepository, StoreService storeService) {
+    public OrderService(OrderRepository orderRepository, StoreService storeService, CustomerService customerService) {
         this.orderRepository = orderRepository;
         this.storeService = storeService;
+        this.customerService = customerService;
     }
 
     public void newOrder(CreateOrder createOrder) {
+        // id 가 없는 회원이 주문했을 시 validation 처리
+        if(!customerService.findCustomerById(createOrder.getCustomerId())){
+            throw new IllegalArgumentException("존재하지 않는 회원입니다.");
+        }
+
+
+
+
+        //
+
         List<StoreProduct> storeProducts = new ArrayList<>();
         for (Map.Entry<Integer,Integer> entry : createOrder.getQuantityByProduct().entrySet()) {
             Integer productID = entry.getKey();

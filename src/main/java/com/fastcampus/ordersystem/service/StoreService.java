@@ -1,5 +1,6 @@
 package com.fastcampus.ordersystem.service;
 
+import com.fastcampus.ordersystem.domain.Customer;
 import com.fastcampus.ordersystem.domain.StoreProduct;
 import com.fastcampus.ordersystem.repository.StoreProductRepository;
 import org.springframework.stereotype.Service;
@@ -24,4 +25,6 @@ public class StoreService {
     public void saveAll(Iterable<StoreProduct> storeProducts){
         storeProductRepository.saveAll(storeProducts);
     }
+
+
 }
