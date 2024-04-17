@@ -43,3 +43,22 @@ CREATE TABLE customers
     address      VARCHAR(100) NOT NULL,
     PRIMARY KEY (customer_id)
 );
+Drop table if exists stores;
+CREATE TABLE stores(
+    store_id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    address VARCHAR(100) NOT NULL,
+    phone_number VARCHAR(100) NULL,
+    open_at VARCHAR(100) NOT NULL,
+    close_at VARCHAR(100) NOT NULL,
+    PRIMARY KEY (store_id)
+);
+Drop table IF exists store_products;
+
+Create Table store_products(
+    store_product_id INT NOT NULL AUTO_INCREMENT,
+    store_id INT NOT NULL,
+    product_id INT NOT NULL,
+    stock_quantity INT NOT NULL,
+    PRIMARY KEY (store_product_id)
+);
